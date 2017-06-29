@@ -12,6 +12,8 @@ import {ProductDetailComponent} from './product-detail/product-detail.component'
 import {HomeComponent} from './home/home.component';
 import {Router, RouterModule, Routes} from "@angular/router";
 import {ProductService} from "./shared/product.service";
+import {ReactiveFormsModule} from "@angular/forms";
+import { FilterPipe } from './pipe/filter.pipe';
 
 const routeConfig: Routes = [
   {
@@ -37,13 +39,15 @@ const routeConfig: Routes = [
     ProductComponent,
     StarsComponent,
     ProductDetailComponent,
-    HomeComponent
+    HomeComponent,
+    FilterPipe
   ],
   //声明组件正常运转还需要什么模块
   imports: [
     //比选，浏览器模块
     BrowserModule,
-    RouterModule.forRoot(routeConfig)
+    RouterModule.forRoot(routeConfig),
+    ReactiveFormsModule
   ],
   //声明模块中提供什么服务
   providers: [ProductService],
