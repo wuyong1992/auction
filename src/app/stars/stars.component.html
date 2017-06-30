@@ -1,0 +1,8 @@
+<p>
+  <!--[]属性绑定-->
+  <!--[class.xxx]样式绑定，由star决定是否将该属性绑定-->
+  <span *ngFor="let star of stars" class="glyphicon glyphicon-star"
+  [class.glyphicon-star-empty]="star"></span>
+  <!--父组件传递过来的值-->
+  <span>{{rating}}星</span>
+</p>
